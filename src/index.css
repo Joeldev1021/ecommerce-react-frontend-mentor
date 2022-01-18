@@ -14,3 +14,45 @@ body {
 -moz-box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
 box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
 }
+
+.active {
+  border: 3px solid hsl(26, 100%, 55%);
+  position: relative;
+}
+
+.active::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 100;
+  background: hsl(223, 64%, 98%);
+ 
+}
+
+.modal {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.container-img {
+  position:absolute;
+  margin:auto;
+  top:16%;
+  left:0;
+  right:0;
+}
+
+
+.img-modal img{
+   width: 100%;
+}
+

@@ -5,23 +5,27 @@ import { arrImg } from "../service";
 import Modal from "./Modal";
 
 const CardProduct = () => {
-  const [modal, setModal] = useState(false);
-  const [itemModal, setItemModal] = useState(null);
+  const [showModal, setShowModal] = useState(false);
+  const [itemActive, setItemActive] = useState(arrImg[0]);
 
-  const handleModal = (item) => {
-    setItemModal(item.split("/")[2].slice(0, -14));
-    setModal(!modal);
+  const handleModal = () => {
+    setShowModal(!showModal);
   };
+
+  const handleItemActive = (id) => {
+    setItemActive(arrImg.find(i => i.id === id));
+  };
+  console.log(itemActive);
 
   return (
     <section>
-      {modal && <Modal itemModal={itemModal}/>}
-      <div style={{ width: "400px", margin: "auto" }} className="overflow-hidden rounded-md">
-        <img style={{ width: "100%" }} src="./images/image-product-1.jpg" alt="product-1" />
+       {showModal && <Modal itemActive={itemActive} handleModal={handleModal}/>}
+      <div onClick={() => handleModal()} style={{ width: "400px", margin: "auto" }} className="overflow-hidden rounded-[1rem]">
+        <img style={{ width: "100%" }} src={itemActive.srcImg} alt="product-1" />
       </div>
       <div className="flex mt-2 justify-center">
         {arrImg.map((item) => (
-          <CardItem key={item.id} handleModal={handleModal} card={item.card} />
+          <CardItem key={item.id} handleItemActive={handleItemActive} item={item} itemActiveId={itemActive.id}/>
         ))}
       </div>
     </section>

@@ -1,7 +1,9 @@
-const CardItem = ({ card, handleModal }) => {
+const CardItem = ({ handleItemActive, item, itemActiveId }) => {
   return (
-        <div onClick={() => handleModal(card)} style={{ width: "89px" }} className="m-2 rounded-md overflow-hidden cursor-pointer">
-            <img className="w-full" src={card} alt="card" />
+        <div style={{ width: "89px" }}
+          onClick={() => handleItemActive(item.id)}
+          className={`m-2 rounded-lg overflow-hidden cursor-pointer border ${itemActiveId === item.id && "active"}`}>
+            <img className="w-full" src={item.srcImgSmall} alt="card" />
         </div>
   );
 };
