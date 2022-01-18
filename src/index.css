@@ -28,12 +28,12 @@ box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
   width: 100%;
   height: 100%;
   opacity: 0.7;
-  z-index: 100;
+  z-index: 10;
   background: hsl(223, 64%, 98%);
  
 }
 
-.modal {
+.modal-container {
   position: absolute;
   margin: auto;
   width: 100%;
@@ -41,14 +41,19 @@ box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
   height: 100%;
   top: 0;
   left: 0;
+  
 }
 
+
 .container-img {
-  position:absolute;
+  /* position:absolute;
   margin:auto;
   top:16%;
   left:0;
-  right:0;
+  right:0; */
+  position: relative;
+  margin: auto;
+  top: 15%;
 }
 
 

@@ -1,11 +1,12 @@
+/* eslint-disable no-unused-vars */
 import Header from "./components/Header";
 import Main from "./components/Main";
 
 function App () {
   return (
-    <div className="">
+    <div >
       <Header />
-      <Main/>
+      <Main />
     </div>
   );
 }
