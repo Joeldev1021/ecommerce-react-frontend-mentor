@@ -20,7 +20,7 @@ const CardProduct = () => {
   return (
     <section>
        {showModal && <Modal itemActive={itemActive} handleItemActive={handleItemActive} handleModal={handleModal}/>}
-      <div onClick={() => handleModal()} style={{ width: "400px", margin: "auto" }} className="overflow-hidden rounded-[1rem]">
+      <div onClick={() => handleModal()} style={{ width: "400px", margin: "auto" }} className="overflow-hidden rounded-[1rem] hover:cursor-pointer">
         <img style={{ width: "100%" }} src={itemActive.srcImg} alt="product-1" />
       </div>
       <div className="flex mt-2 justify-center">
