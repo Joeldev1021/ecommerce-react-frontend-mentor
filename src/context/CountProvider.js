@@ -5,7 +5,8 @@ import { countReducer } from "./countReducer.js";
 export const contextCount = createContext();
 
 const initialState = {
-  count: 0
+  count: 0,
+  cartItem: 0
 };
 
 const CountProvider = ({ children }) => {
@@ -18,15 +19,26 @@ const CountProvider = ({ children }) => {
   const increment = () => {
     dispatch({ type: "INCREMENT" });
   };
-  const addCart = (item) => {
+  const resetCount = () => {
+    dispatch({ type: "RESET" });
+  };
+
+  const addCart = () => {
     dispatch({ type: "ADD_CART" });
+  };
+
+  const resetCart = () => {
+    dispatch({ type: "RESET_CART" });
   };
 
   return (
         <contextCount.Provider value={{
           state,
           decrement,
-          increment
+          increment,
+          resetCount,
+          resetCart,
+          addCart
         }}>
           {children}
         </contextCount.Provider>
