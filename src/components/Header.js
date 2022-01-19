@@ -1,9 +1,15 @@
-import { useContext } from "react";
-import { contextCount } from "../context/CountProvider";
+
+import { useState } from "react";
+import Basket from "./Basket";
 import Navbar from "./Navbar";
 
 const Header = () => {
-  const { state } = useContext(contextCount);
+  const [isOpen, setIsOpen] = useState(false);
+  const handleBasketCart = () => {
+    console.log(" Basket Cart Clicked");
+    setIsOpen(!isOpen);
+  };
+
   return (
     <header >
       <div style={{ width: "80%", margin: "auto" }} className='flex items-center justify-between border-b py-8'>
@@ -13,11 +19,9 @@ const Header = () => {
         </div>
        <div className="flex w-32 justify-between items-center">
          <div className="w-[25px] h-[25px] relative">
-           {
-              state.count > 0 &&
-              <span className="absolute right-[-5px] top-[-10px] bg-orange text-[10px] px-2 rounded-lg text-white font-bold">1</span>
-           }
-           <img className="w-full" src="./images/icon-cart.svg" alt="cart" />
+            <span className="absolute right-[-5px] top-[-10px] bg-orange text-[10px] px-2 rounded-lg text-white font-bold">1</span>
+           <img onClick={() => handleBasketCart()} className="w-full hover:cursor-pointer" src="./images/icon-cart.svg" alt="cart" />
+           {isOpen && <Basket/>}
          </div>
           <img style={{ width: "40px" }} src="./images/image-avatar.png" alt="avatar" />
         </div>

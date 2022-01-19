@@ -18,6 +18,9 @@ const CountProvider = ({ children }) => {
   const increment = () => {
     dispatch({ type: "INCREMENT" });
   };
+  const addCart = (item) => {
+    dispatch({ type: "ADD_CART" });
+  };
 
   return (
         <contextCount.Provider value={{
