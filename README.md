@@ -1,6 +1,6 @@
 # Frontend Mentor - E-commerce product page
 
-![Design preview for the E-commerce product page coding challenge](./design/desktop-preview.jpg)
+<img src="https://res.cloudinary.com/dz209s6jk/image/upload/q_auto:good,w_900/Challenges/bognvsqd34ueowkompeh.jpg"/>
 
 ## Welcome! 👋
 
