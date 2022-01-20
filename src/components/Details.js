@@ -2,12 +2,12 @@ import ButtonsGroup from "./ButtonsGroup";
 
 const Details = () => {
   return (
-    <div>
+    <div className="p-3">
       <p className="text-orange font-bold">SNEAKER COMPANY</p>
       <p style={{ lineHeight: "50px" }} className="text-[50px] font-bold mb-10">
         Fal Limited Edition Sneakers
       </p>
-      <p style={{ width: "430px" }} className="text-dark-blue pb-5">
+      <p className="md:w-[430px] text-dark-blue pb-5">
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
