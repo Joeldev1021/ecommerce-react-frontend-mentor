@@ -1,34 +1,44 @@
 
-import { useContext, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { contextCount } from "../context/CountProvider";
 import Basket from "./Basket";
 import Navbar from "./Navbar";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showMenu, setshowMenu] = useState(false);
   const { state } = useContext(contextCount);
+  const navRef = useRef(null);
+
   const handleBasketCart = () => {
     console.log(" Basket Cart Clicked");
     setIsOpen(!isOpen);
   };
+  const handleMenuShow = () => {
+    setshowMenu(!showMenu);
+    navRef.current.classList.toggle("hidden-menu");
+  };
 
   return (
-    <header >
-      <div style={{ width: "80%", margin: "auto" }} className='flex items-center justify-between border-b py-8'>
-        <div className="flex items-center w-1/2">
+    <header className="m-auto" >
+      <div className='flex m-auto w-[80%] py-4 items-center justify-between border-b md:py-8 '>
+        <div className="flex items-center justify-between w-[170px] md:w-1/2">
+          <button onClick={() => handleMenuShow()}>
+             <img className="block md:hidden" src="./images/icon-menu.svg" alt="" />
+          </button>
          <img src="./images/logo.svg" alt="logo" />
-           <Navbar />
+           <Navbar ref={navRef} handleMenuShow={handleMenuShow} showMenu={showMenu}/>
         </div>
-       <div className="flex w-32 justify-between items-center">
+       <div className="flex w-[100px] md:w-32 justify-between items-center">
          <div className="w-[25px] h-[25px] relative">
            {state.cartItem > 0 &&
              <span className="absolute right-[-5px] top-[-10px] bg-orange text-[10px] px-2 rounded-lg text-white font-bold">{state.cartItem}</span>}
            <img onClick={() => handleBasketCart()} className="w-full hover:cursor-pointer" src="./images/icon-cart.svg" alt="cart" />
-           {isOpen && <Basket/>}
          </div>
-          <img style={{ width: "40px" }} src="./images/image-avatar.png" alt="avatar" />
+          <img className="w-[40px] rounded-full border-2 hover:border-orange hover:cursor-pointer " src="./images/image-avatar.png" alt="avatar" />
         </div>
       </div>
+      {isOpen && <Basket/>}
     </header>
   );
 };
