@@ -7,7 +7,7 @@ const Basket = () => {
   const { state } = useContext(contextCount);
   console.log(state.cartItem);
   return (
-    <div className="w-[350px] h-[220px]  top-7 m-auto bg-white shadow-lg shadow-slate-400 rounded-lg relative right-[150px]">
+    <div className="w-[350px] h-[220px] left-0 right-0 md:left-[70%] md:right-[100px] top-[100px] m-auto bg-white shadow-lg shadow-slate-400 rounded-lg absolute ">
       <header className="border-b-2 p-2 px-6">
         <p className="font-bold">Cart</p>
       </header>

@@ -30,7 +30,21 @@ box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
   opacity: 0.7;
   z-index: 10;
   background: hsl(223, 64%, 98%);
- 
+}
+
+.hover-item {
+  position: relative;
+}
+.hover-item:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+  z-index: 10;
+  background: hsl(223, 64%, 98%);
 }
 
 .modal-container {
@@ -59,5 +73,13 @@ box-shadow: -1px 15px 22px 3px rgba(255,237,224,1);
 
 .img-modal img{
    width: 100%;
+}
+.menu {
+  transition: all 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+.hidden-menu {
+  transform: translateX(-100%);
 }
 
