@@ -9,7 +9,7 @@ const Navbar = ({ showMenu, handleMenuShow }, ref) => {
   return (
     <nav ref={ref} className={`menu ${menuClass} md:-z-0 md:translate-x-1 md:font-normal md:static md:flex list-none justify-between md:w-full text px-3 pl-5 md:text-dark-blue`}>
         <button onClick={() => handleMenuShow()} className="p-4 font-bold pt-3 md:hidden">x</button>
-       {routes.map(item => <li className="p-3 capitalize" key={item}><a href="#">{item}</a></li>)}
+       {routes.map(item => <li className="p-3 capitalize hover:underline md:hover:underline-offset-[49px] decoration-orange" key={item}><a href="#">{item}</a></li>)}
     </nav>
   );
 };

@@ -20,7 +20,7 @@ const CardProduct = () => {
   };
 
   return (
-    <section>
+    <section className="flex flex-col m-auto justify-end">
        {showModal && <Modal itemActive={itemActive} handleItemActive={handleItemActive} handleModal={handleModal}/>}
       <div onClick={() => handleModal()} className="w-[100%] relative md:w-[400px] md:static overflow-hidden md:rounded-[1rem] hover:cursor-pointer">
          <ProductImg itemActive={itemActive}/>

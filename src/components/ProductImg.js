@@ -18,11 +18,11 @@ const ProductImg = ({ itemActive }) => {
 
   return (
     <>
-      <button onClick={() => handleItemActive("next")} className="absolute m-auto top-0 bottom-0 right-7  md:hidden w-[2.5rem] h-[2.5rem]  rounded-[50%] bg-gray-50 flex justify-center items-center">
+      <button onClick={() => handleItemActive("next")} className="text-black hover:text-orange absolute m-auto top-0 bottom-0 right-7  md:hidden w-[2.5rem] h-[2.5rem]  rounded-[50%] bg-gray-50 flex justify-center items-center">
         <ArrowIcon arrow="next" />
       </button>
       <img className="w-[100%]" src={item.srcImg} alt="product-1" />
-      <button onClick={() => handleItemActive("prev")} className="absolute m-auto top-0 bottom-0 left-7 md:hidden w-[2.5rem] h-[2.5rem] rounded-[50%] bg-gray-50 flex justify-center items-center">
+      <button onClick={() => handleItemActive("prev")} className="text-black hover:text-orange absolute m-auto top-0 bottom-0 left-7 md:hidden w-[2.5rem] h-[2.5rem] rounded-[50%] bg-gray-50 flex justify-center items-center">
         <ArrowIcon arrow="prev" />
       </button>
     </>
