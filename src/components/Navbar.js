@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 
 const routes = ["collections", "men", "women", "about", "contact"];
 
-const Navbar = ({ showMenu, handleMenuShow }, ref) => {
+const Navbar = ({ handleMenuShow }, ref) => {
   const menuClass = "absolute bg-white top-0 left-0 h-[100%] z-50 w-60 text-black font-bold ";
   return (
     <nav ref={ref} className={`menu ${menuClass} md:-z-0 md:translate-x-1 md:font-normal md:static md:flex list-none justify-between md:w-full text px-3 pl-5 md:text-dark-blue`}>

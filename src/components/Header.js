@@ -6,7 +6,6 @@ import Navbar from "./Navbar";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showMenu, setshowMenu] = useState(false);
   const { state } = useContext(contextCount);
   const navRef = useRef(null);
 
@@ -15,19 +14,18 @@ const Header = () => {
     setIsOpen(!isOpen);
   };
   const handleMenuShow = () => {
-    setshowMenu(!showMenu);
     navRef.current.classList.toggle("hidden-menu");
   };
 
   return (
     <header className="m-auto" >
-      <div className='flex m-auto w-[80%] py-4 items-center justify-between border-b md:py-8 '>
+      <div className='flex m-auto w-[90%] md:w-[80%] py-4 items-center justify-between border-b md:py-8 '>
         <div className="flex items-center justify-between w-[170px] md:w-1/2">
           <button onClick={() => handleMenuShow()}>
              <img className="block md:hidden" src="./images/icon-menu.svg" alt="" />
           </button>
          <img src="./images/logo.svg" alt="logo" />
-           <Navbar ref={navRef} handleMenuShow={handleMenuShow} showMenu={showMenu}/>
+           <Navbar ref={navRef} handleMenuShow={handleMenuShow} />
         </div>
        <div className="flex w-[100px] md:w-32 justify-between items-center">
          <div className="w-[25px] h-[25px] relative">
